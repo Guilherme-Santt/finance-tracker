@@ -1,4 +1,8 @@
 <script setup>
+import { ref } from 'vue';
+import transitionModal from '@/components/modals/transition/index.vue';
+
+const isModalOpen = ref(false);
 </script>
 
 <template>
@@ -9,11 +13,26 @@
           <div class="donut-inner">$2,400</div>
         </div>
       </div>
-      <button class="btn-add">+ ADD EXPENSE</button>
+      <button @click="isModalOpen = true" class="btn-add">+ Add Transação</button>
     </aside>
+
+    <transition name="pop">
+      <transitionModal v-if="isModalOpen" @close="isModalOpen = false" />
+    </transition>
 </template>
 
 <style scoped>
+.pop-enter-active,
+.pop-leave-active {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pop-enter-from,
+.pop-leave-to {
+  opacity: 0;
+  transform: scale(0.95) translateY(10px);
+}
+
 /* Right Panel */
 .category-card {
   background: #1e293b;

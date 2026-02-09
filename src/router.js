@@ -20,6 +20,11 @@ const routes = [
         path: '/settings',
         name: 'Settings',
         component: () => import('@/pages/settings/index.vue')
+    },
+    {
+        path: '/categories',
+        name: 'Categories',
+        component: () => import('@/pages/categories/index.vue')
     }
 ];
 

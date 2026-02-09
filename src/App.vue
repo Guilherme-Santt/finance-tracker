@@ -17,7 +17,7 @@ import Panel from '@/components/panel/index.vue'
   grid-template-columns: 200px 1fr 300px;
   gap: 2rem;
   background-color: #0f172a;
-  min-height: 100vh;
+  min-height: 93.5vh;
   padding: 2rem;
 }
 </style>

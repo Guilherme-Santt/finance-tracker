@@ -7,16 +7,16 @@ const router = useRouter();
     <nav class="sidebar">
       <h1 class="logo">Finance.io</h1>
       <ul class="nav-links">
-        <li class="active" @click="router.push('/')"><span>🏠</span> Dashboard</li>
-        <li @click="router.push('/accounts')"><span>💳</span> Contas</li>
-        <li @click="router.push('/reports')"><span>📊</span> Relatórios</li>
-        <li @click="router.push('/settings')"><span>⚙️</span> Configurações</li>
+        <li :class="{active: router.currentRoute.value.name === 'Welcome'}" @click="router.push('/')"><span>🏠</span> Dashboard</li>
+        <li :class="{active: router.currentRoute.value.name === 'Accounts'}" @click="router.push('/accounts')"><span>💳</span> Contas</li>
+        <li :class="{active: router.currentRoute.value.name === 'Reports'}" @click="router.push('/reports')"><span>📊</span> Relatórios</li>
+        <li :class="{active: router.currentRoute.value.name === 'Categories'}" @click="router.push('/categories')"><span>🏷️</span> Categorias</li>
+        <li :class="{active: router.currentRoute.value.name === 'Settings'}" @click="router.push('/settings')"><span>⚙️</span> Configurações</li>
       </ul>
     </nav>
 </template>
 
 <style scoped>
-/* Sidebar */
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
